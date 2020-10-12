@@ -5,7 +5,8 @@ const initialState = false
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER:
-      return [action.payload]
+      return action.payload
+    default:
       break;
   }
   return state

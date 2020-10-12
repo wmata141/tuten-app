@@ -15,6 +15,12 @@
     align-items: center;
 }
 
+.indexBackground {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
 #loginform {
     max-width: 500px;
     min-width: 300px;
@@ -39,7 +45,7 @@
     align-items: center;
     padding-top: 2rem;
     max-width: 100%;
-    
+    margin-left: 0;
   }
   
   .row input{
@@ -50,7 +56,7 @@
     padding-left: 1.5rem;
     padding-bottom: 1rem;
     box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
-    transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;    
   }
   
   .row input:focus{
@@ -138,3 +144,88 @@
      padding-top: 2rem;
      margin-top: 1.5rem;
   }
+
+  /* Spinner 3Balls Scale */
+.sp {
+  width: 32px;
+  height: 32px;
+  clear: both;
+  margin: 20%;    
+}
+.container > .sp {
+margin: 20px auto;
+}
+.sp-3balls, .sp-3balls:before, .sp-3balls:after {
+  border-radius: 50%;
+  background-color: #000;
+  width: 18px;
+  height: 18px;
+  transform-origin: center center;
+  display: inline-block;
+}
+.sp-3balls {
+  position: relative;
+  background-color: rgba(#000,1);
+  opacity: 1;
+  -webkit-animation: spScaleAlpha 1s infinite linear;
+  animation: spScaleAlpha 1s infinite linear;
+}
+.sp-3balls:before, .sp-3balls:after {
+  content: '';
+  position: relative;
+  opacity: 0.25;
+}
+.sp-3balls:before {
+  left: 30px;
+  top: 0px;
+  -webkit-animation: spScaleAlphaBefore 1s infinite linear;
+  animation: spScaleAlphaBefore 1s infinite linear;
+}
+.sp-3balls:after {
+  left: -30px;
+  top: -23px;
+  -webkit-animation: spScaleAlphaAfter 1s infinite linear;
+  animation: spScaleAlphaAfter 1s infinite linear;
+}
+@-webkit-keyframes spScaleAlpha {
+  0% { opacity: 1; }
+  33% { opacity: 0.25; }
+  66% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+@keyframes spScaleAlpha {
+  0% { opacity: 1; }
+  33% {  opacity: 0.25; }
+  66% { opacity: 0.25; }
+  100% {  opacity: 1; }
+}
+@-webkit-keyframes spScaleAlphaBefore {
+  0% { opacity: 0.25; }
+  33% { opacity: 1; }
+  66% { opacity: 0.25; }
+}
+@keyframes spScaleAlphaBefore {
+  0% { opacity: 0.25; }
+  33% { opacity: 1; }
+  66% { opacity: 0.25; }
+}
+@-webkit-keyframes spScaleAlphaAfter {
+  33% { opacity: 0.25; }
+  66% { opacity: 1; }
+  100% { opacity: 0.25; }
+}
+@keyframes spScaleAlphaAfter {
+  33% { opacity: 0.25; }
+  66% { opacity: 1; }
+  100% { opacity: 0.25; }
+}
+
+.body-list {
+  padding: 40px 10% 20px 10%;
+}
+
+.body-list h1 {
+  padding: 20px 0;
+  font-size: 2.5em;
+  text-align: center;
+}

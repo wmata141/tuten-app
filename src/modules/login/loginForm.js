@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { getBooksWithToken, formValidate } from './loginAction'
 import { ADD_TO_CART } from '../../reducers/bookReducer'
 import { LOGIN_USER } from '../../reducers/authReducer'
+import OtherMethods from './otherMethods'
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
@@ -32,37 +33,6 @@ const LoginForm = () => {
         }        
     }
 
-    const iconClick = (name) => {
-        alert(`Enter with ${name} account`)
-    };
-
-    const FormHeader = props => (
-        <h2 id="headerTitle">{props.title}</h2>
-    );
-
-    const OtherMethods = props => (
-        <div id="alternativeLogin">
-            <label>Or sign in with:</label>
-            <div id="iconGroup">
-            <Facebook />
-            <Twitter />
-            <Google />
-            </div>
-        </div>
-    );
-
-    const Facebook = props => (
-        <p onClick={() => iconClick('Facebook')} id="facebookIcon"></p>
-    );
-
-    const Twitter = props => (
-        <p onClick={() => iconClick('Twitter')} id="twitterIcon"></p>
-    );
-
-    const Google = props => (
-        <p onClick={() => iconClick('Google')} id="googleIcon"></p>
-    );
-
     return (
         <div className="index">
             {spinner ? 
@@ -71,7 +41,7 @@ const LoginForm = () => {
                 ) : 
                 (
                     <div id="loginform" >
-                        <FormHeader title="Login" />
+                        <h2 id="headerTitle">{'Login'}</h2>
                         <div>                
                             <div className="row">
                                 <label>{"Username"}</label>

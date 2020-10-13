@@ -9,25 +9,25 @@ export const filterBySelect = (filterSelect, booksFilter, books, filterPrice) =>
         case '>':
             return (
                 booksFilter = books.filter(item => {
-                return parseInt(filterPrice) > item.bookingPrice
+                return parseInt(filterPrice) < item.bookingPrice
                 })    
             )            
         case '>=':
             return (
                 booksFilter = books.filter(item => {
-                return parseInt(filterPrice) >= item.bookingPrice                
+                return parseInt(filterPrice) <= item.bookingPrice                
                 })
             )
         case '<':
             return (
                 booksFilter = books.filter(item => {
-                return parseInt(filterPrice) < item.bookingPrice                
+                return parseInt(filterPrice) > item.bookingPrice                
                 })
             )
         case '<=':
             return (
                 booksFilter = books.filter(item => {
-                return parseInt(filterPrice) <= item.bookingPrice                
+                return parseInt(filterPrice) >= item.bookingPrice                
                 })
             )
         default:

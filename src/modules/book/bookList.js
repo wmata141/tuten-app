@@ -22,7 +22,8 @@ const BookList = () => {
       if (filterText.length === 0 && filterPrice.length === 0) {        
         setBookShow(books)
       } else {        
-        if (filterPrice.length > 0) {                                                    
+        if (filterPrice.length > 0) { 
+          console.log("filterSelect, booksFilter, books, filterPrice",filterSelect, booksFilter, books, filterPrice);                                                   
           booksFilter = filterBySelect(filterSelect, booksFilter, books, filterPrice)
 
           booksFilter = booksFilter.filter(item => { 

@@ -1,10 +1,11 @@
+import { URL } from '../../config'
 const axios = require('axios')
 
 export const getBooksWithToken = async (email, password) => {
     try {
         const token = await axios({
             method: 'PUT',
-            url: `https://dev.tuten.cl:443/TutenREST/rest/user/${email}`,
+            url: `${URL}${email}`,
             headers: {
                 'app'     : 'APP_BCK',
                 'password': password,                
@@ -13,7 +14,7 @@ export const getBooksWithToken = async (email, password) => {
 
         const { data } = await axios({
             method: 'GET',
-            url: `https://dev.tuten.cl:443/TutenREST/rest/user/contacto%40tuten.cl/bookings`,
+            url: `${URL}contacto%40tuten.cl/bookings`,
             headers: {
                 'app'       : 'APP_BCK',
                 'adminemail': email,   
